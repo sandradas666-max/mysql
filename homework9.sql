@@ -1,0 +1,2 @@
+select books.title,borrowers.name from books left join borrowers on books.book_id=borrowers.book_id;
+select borrowers.name,books.book_id,books.title from borrowers left join books on borrowers.book_id=book.book_id;
