@@ -1,4 +1,18 @@
-select books.title,borrowers.name from books left join borrowers on books.book_id=borrowers.book_id;
-select borrowers.name,books.book_id,books.title from borrowers left join books on borrowers.book_id=book.book_id;
-select books.book_id,book.title from books left join borrowers on books.book_id=borrowers.book_id where borrowers.book_id is null;
-select borrowers.borrower_id,borrowers.name,books.book_id,books.title from borrowers left join books on borrowers.book_id=books.book_id;
+INSERT INTO books(book_id,title)
+VALUES(1,"The Alchemist"),
+(2,"The Power of Now"),
+(3,"Think and Grow Rich"),
+(4,"Clean Code");
+
+INSERT INTO borrowers(borrower_id,name,book_id)
+VALUES(101,"Alice",1),
+(102,"Bob",2),
+(103,"Charlie",NULL);
+
+SELECT books.book_id,books.title,borrowers.borrower_id FROM books LEFT JOIN borrowers ON books.book_id=borrowers.book_id;
+
+SELECT borrowers.borrower_id,borrowers.name,borrowers.book_id,books.title FROM books RIGHT JOIN borrowers on books.book_id=borrowers.book_id;
+
+SELECT books.book_id,books.title,borrowers.name FROM books LEFT JOIN borrowers ON books.book_id=borrowers.book_id WHERE borrowers.book_id IS NULL;
+
+SELECT borrowers.borrower_id,borrowers.name,borrowers.book_id,books.title FROM books RIGHT JOIN borrowers ON books.book_id=borrowers.book_id;

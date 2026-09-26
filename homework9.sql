@@ -1,2 +1,15 @@
-select books.title,borrowers.name from books left join borrowers on books.book_id=borrowers.book_id;
-select borrowers.name,books.book_id,books.title from borrowers left join books on borrowers.book_id=book.book_id;
+INSERT INTO employees(id,name)
+VALUES(1,"Anjali"),
+(2,"Rohan"),
+(3,"Meena");
+
+INSERT INTO departments(emp_id,department_name)
+VALUES(1,"HR"),
+(2,"IT"),
+(4,"Finance");
+
+SELECT employees.id,employees.name,departments.department_name FROM employees LEFT JOIN departments ON employees.id=departments.emp_id;
+
+SELECT employees.id,employees.name,departments.department_name FROM employees INNER JOIN departments ON employees.id=departments.emp_id;
+
+SELECT departments.emp_id,departments.department_name,employees.name FROM employees RIGHT JOIN departments ON employees.id=departments.emp_id;
